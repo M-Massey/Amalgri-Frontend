@@ -1,21 +1,19 @@
-FROM node:16
+# pull official base image
+FROM node:13.12.0-alpine
 
-# Create app directory
-WORKDIR /usr/src/app
+# set working directory
+WORKDIR /app
 
-# Install app dependancies
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+# install app dependencies
 COPY package.json ./
-
+COPY package-lock.json ./
 RUN npm install
 
-# If you are building for production run below instad 
-RUN npm ci --only=production
+# add app
+COPY . ./
 
-# Bundle app source
-COPY . .
-
-# Since app is running on port 8000
-EXPOSE 3000
-
-# Commands to run your app
-CMD [ "npm", "run", "start"]
+# start app
+CMD ["npm", "start"]   
