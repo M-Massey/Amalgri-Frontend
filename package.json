@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "npm run start --production",
-    "build": "CI=false npm build --production",
+    "build": "CI=false npm build --production"
 
   },
   "eslintConfig": {
