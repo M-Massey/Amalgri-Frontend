@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "",
-    "build": "npm run build client --configuration=production"
+    "build": "npm run build client --omit=dev"
   },
   "eslintConfig": {
     "extends": [
