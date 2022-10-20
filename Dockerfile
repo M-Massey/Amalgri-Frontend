@@ -15,7 +15,7 @@ RUN npm ci --only=production
 COPY . .
 
 # Since app is running on port 8000
-EXPOSE 8000
+EXPOSE 3000
 
 # Commands to run your app
 CMD [ "npm", "run", "start"]
