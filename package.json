@@ -15,8 +15,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run start --production",
-    "build": "CI=false npm run build --production"
+    "start": "npm run start --production"
 
   },
   "eslintConfig": {
