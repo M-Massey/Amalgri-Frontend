@@ -22,7 +22,7 @@ const AnimeDetails = () => {
   let { user } = useAuth0();
 
   const postToFavourties = async () => {
-    const res = await fetch(`/api/favourite`, {
+    await fetch(`/api/favourite`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -33,7 +33,7 @@ const AnimeDetails = () => {
   };
 
   const postToHistory = async () => {
-    const res = await fetch(`/api/history`, {
+     await fetch(`/api/history`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -44,7 +44,7 @@ const AnimeDetails = () => {
   };
 
   const postToWatchlist = async () => {
-    const res = await fetch(`/api/watchlist`, {
+    await fetch(`/api/watchlist`, {
       method: "POST",
       headers: {
         Accept: "application/json",

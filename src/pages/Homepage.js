@@ -1,8 +1,7 @@
 import Searchbar from "../components/Searchbar";
 import styled from "styled-components";
-import homepageBg from "../assets/biganime.png";
 
-const Homepage = ({}) => {
+const Homepage = () => {
   return (
     <Wrapper>
       <BannerImage

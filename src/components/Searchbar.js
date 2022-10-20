@@ -2,31 +2,20 @@ import Input from "./styled/elements/Input";
 import Button from "./styled/elements/Button";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import AnimeList from "./AnimeList";
 import { AiOutlineSearch as SearchIcon } from "react-icons/ai";
 import useDebounce from "../hooks/useDebounce";
 
 const Searchbar = () => {
-  const [genreSelection, setGenreSelection] = useState("All");
-  const [genres, setGenres] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams();
-
   const [searchResults, setSearchResults] = useState([]);
   const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const q = searchParams.get("q");
-  const genre = searchParams.get("genre");
 
   const debouncedSearch = useDebounce(search, 500);
 
   const fetchAnimeSearchResults = async () => {
-    setLoading(true);
     const res = await fetch(`/api/anime/search/?q=${debouncedSearch}`);
     const { data } = await res.json();
     setSearchResults(data);
-    setLoading(false);
     return data;
   };
 
@@ -35,7 +24,6 @@ const Searchbar = () => {
   }, [debouncedSearch]);
 
   const HandleSearch = () => {
-    setSearchParams({ q: `${search}`, genre: `${genreSelection}` });
     fetchAnimeSearchResults();
     setSearch("");
   };

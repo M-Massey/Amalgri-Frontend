@@ -1,11 +1,9 @@
-import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
 import styled from "styled-components";
 import { GoTriangleRight, GoTriangleDown } from "react-icons/go";
 
-const CommentSection = ({ comments, fetchCommentSection }) => {
+const CommentSection = ({comments}) => {
   const [open, setOpen] = useState(false);
-  let { user } = useAuth0();
   return (
     <Wrapper>
       <CommentTitle

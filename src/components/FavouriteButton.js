@@ -1,6 +1,5 @@
 import { MdFavorite } from "react-icons/md";
 import styled from "styled-components";
-import Tippy from "@tippyjs/react";
 const FavouriteButton = ({ onClickFunc }) => {
   return <StyledButton onClick={onClickFunc} size={20}></StyledButton>;
 };

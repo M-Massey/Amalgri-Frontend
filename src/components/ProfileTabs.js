@@ -16,7 +16,7 @@ const profileTabsData = [
   },
 ];
 
-const ProfileTabs = ({}) => {
+const ProfileTabs = () => {
   return (
     <Wrapper>
       <UnorderedList>

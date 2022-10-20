@@ -1,16 +1,15 @@
-import { Outlet, useParams, useNavigate } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useState } from "react";
 import AnimeList from "../components/AnimeList";
 import ProfileTabs from "../components/ProfileTabs";
 import styled from "styled-components";
-import homepageBg from "../assets/biganime.png";
 import DefaultProfileBanner from "../components/DefaultProfileBanner";
 import LoadingScreen from "../components/LoadingScreen";
 import { LoadingCard } from "../components/LoadingScreen";
 
-const Profile = ({}) => {
-  const { user, isLoading } = useAuth0();
+const Profile = () => {
+  const { user} = useAuth0();
   const [favouriteList, setFavouriteList] = useState([]);
   const [historyList, setHistoryList] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
@@ -64,7 +63,7 @@ const Profile = ({}) => {
   };
 
   const updateUserProfileBanner = async (endpoint, userId, base64String) => {
-    const res = await fetch(`${endpoint}`, {
+    await fetch(`${endpoint}`, {
       method: "PATCH",
       headers: {
         Accept: "application/json",

@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://amalgri-backend-production.up.railway.app",
+  "proxy": "https://amalgri-backend-production-52b3.up.railway.app/",
   "dependencies": {
     "@auth0/auth0-react": "^1.10.2",
     "@testing-library/jest-dom": "^5.16.5",

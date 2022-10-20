@@ -10,13 +10,9 @@ import Watchlist from "./WatchlistButton";
 const AnimeCard = ({
   anime,
   profileTypeId,
-  grayscale,
-  fetchFavourtieProfile,
-  fetchAllLists,
 }) => {
   const { user } = useAuth0();
   const [filter, setFilter] = useState(true);
-  const [loading, setLoading] = useState(false);
   const [hasBeenRemoved, setHasBeenRemoved] = useState(false);
 
   let profileId = useParams().profileTypeId;
@@ -48,10 +44,7 @@ const AnimeCard = ({
           profileTypeId: profileTypeId,
         }),
       });
-      setLoading(true);
-      // fetchAllLists();
     } else {
-      setLoading(true);
       await fetch(`/api/${profileTypeId}`, {
         method: "PATCH",
         headers: {
@@ -64,7 +57,6 @@ const AnimeCard = ({
           profileTypeId: profileTypeId,
         }),
       });
-      // fetchAllLists();
     }
   };
 
