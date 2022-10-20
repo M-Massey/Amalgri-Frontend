@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "https://amalgri-backend-production-52b3.up.railway.app/",
+  "homepage": "https://M-Massey.github.io/react-gh-pages",
   "dependencies": {
     "@auth0/auth0-react": "^1.10.2",
     "@tippyjs/react": "^4.2.6",
