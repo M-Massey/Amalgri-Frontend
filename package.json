@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "",
-    "build": "npm run build client --omit=dev"
+    "it": "npm run build client --omit=dev"
   },
   "eslintConfig": {
     "extends": [
