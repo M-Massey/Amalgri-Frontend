@@ -1,13 +1,12 @@
 {
   "files": {
-    "main.js": "/Amalgri-Frontend/static/js/main.d8cc7ccf.js",
+    "main.js": "/Amalgri-Frontend/static/js/main.aad00858.js",
     "static/media/biganime.png": "/Amalgri-Frontend/static/media/biganime.f4bd2564fa0cecf987b3.png",
     "static/media/zorolostgif.gif": "/Amalgri-Frontend/static/media/zorolostgif.baef3b3951ce90723ce4.gif",
-    "static/media/axios.cjs": "/Amalgri-Frontend/static/media/axios.862815d8cfee7fa80dee.cjs",
     "index.html": "/Amalgri-Frontend/index.html",
-    "main.d8cc7ccf.js.map": "/Amalgri-Frontend/static/js/main.d8cc7ccf.js.map"
+    "main.aad00858.js.map": "/Amalgri-Frontend/static/js/main.aad00858.js.map"
   },
   "entrypoints": [
-    "static/js/main.d8cc7ccf.js"
+    "static/js/main.aad00858.js"
   ]
 }
