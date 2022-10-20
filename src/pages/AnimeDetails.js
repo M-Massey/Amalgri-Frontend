@@ -53,17 +53,6 @@ const AnimeDetails = () => {
       body: JSON.stringify({ id: user.sub, anime: animeDetails }),
     });
   };
-
-
-  const fetchAnimeFullDetails = async () => {
-    setLoading(true);
-    const res = await fetch(`/api/anime/id/${id}`);
-    const { data } = await res.json();
-    setAnimeDetails(data);
-    setLoading(false);
-    return data;
-  };
-
   const fetchCommentSection = async (id) => {
     const res = await fetch(`/api/comments/${id}`);
     const { data } = await res.json();
@@ -72,6 +61,20 @@ const AnimeDetails = () => {
   };
 
   useEffect(() => {
+    const fetchAnimeFullDetails = async () => {
+      setLoading(true);
+      const res = await fetch(`/api/anime/id/${id}`);
+      const { data } = await res.json();
+      setAnimeDetails(data);
+      setLoading(false);
+      return data;
+    };
+    const fetchCommentSection = async (id) => {
+      const res = await fetch(`/api/comments/${id}`);
+      const { data } = await res.json();
+      setCommentFeed(data);
+      return data;
+    };
     fetchAnimeFullDetails();
     fetchCommentSection(id);
   }, [id]);

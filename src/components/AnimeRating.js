@@ -23,15 +23,15 @@ const AnimeRating = ({ animeId }) => {
     });
   };
 
-  const fetchAnimeRating = async () => {
-    const res = await fetch(
-      `/api/rating/?user_id=${user?.sub}&anime_id=${animeId}`
-    );
-
-    const data = await res.json();
-    setRating(data?.data?.rating);
-  };
   useEffect(() => {
+    const fetchAnimeRating = async () => {
+      const res = await fetch(
+        `/api/rating/?user_id=${user?.sub}&anime_id=${animeId}`
+      );
+  
+      const data = await res.json();
+      setRating(data?.data?.rating);
+    };
     fetchAnimeRating();
   }, [user]);
 

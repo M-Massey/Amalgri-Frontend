@@ -7,22 +7,22 @@ const LoginPage = () => {
   const { user } = useAuth0();
   let navigate = useNavigate();
 
-  const postData = async () => {
-    const response = await fetch("/api/user", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    });
-
-    const result = await response.json();
-    if (result?.data?.acknowledged) {
-      navigate("/");
-    }
-  };
 
   useEffect(() => {
+    const postData = async () => {
+      const response = await fetch("/api/user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+  
+      const result = await response.json();
+      if (result?.data?.acknowledged) {
+        navigate("/");
+      }
+    };
     postData();
   }, [user]);
 

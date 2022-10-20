@@ -12,18 +12,24 @@ const Searchbar = () => {
 
   const debouncedSearch = useDebounce(search, 500);
 
-  const fetchAnimeSearchResults = async () => {
-    const res = await fetch(`/api/anime/search/?q=${debouncedSearch}`);
-    const { data } = await res.json();
-    setSearchResults(data);
-    return data;
-  };
 
   useEffect(() => {
+    const fetchAnimeSearchResults = async () => {
+      const res = await fetch(`/api/anime/search/?q=${debouncedSearch}`);
+      const { data } = await res.json();
+      setSearchResults(data);
+      return data;
+    };
     if (debouncedSearch) fetchAnimeSearchResults();
   }, [debouncedSearch]);
 
   const HandleSearch = () => {
+    const fetchAnimeSearchResults = async () => {
+      const res = await fetch(`/api/anime/search/?q=${debouncedSearch}`);
+      const { data } = await res.json();
+      setSearchResults(data);
+      return data;
+    };
     fetchAnimeSearchResults();
     setSearch("");
   };

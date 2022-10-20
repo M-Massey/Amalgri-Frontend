@@ -94,11 +94,11 @@ const Profile = () => {
     }
   };
 
-  const fetchProfileBanner = async () => {
-    await getProfileBanner();
-  };
-
   useEffect(() => {
+    const fetchProfileBanner = async () => {
+      await getProfileBanner();
+    };
+  
     if (user !== "undefined") {
       fetchProfileBanner();
     }
@@ -111,6 +111,11 @@ const Profile = () => {
   };
 
   useEffect(() => {
+    const fetchAllLists = () => {
+      fetchFavourtieProfile();
+      fetchWatchlistProfile();
+      fetchHistoryProfile();
+    };
     if (user) {
       fetchAllLists();
     }
