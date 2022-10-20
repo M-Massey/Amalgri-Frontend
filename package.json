@@ -15,10 +15,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npx http-server ./dist",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "npm run start --production",
+    "build": "CI=false npm run build --production"
+
   },
   "eslintConfig": {
     "extends": [
